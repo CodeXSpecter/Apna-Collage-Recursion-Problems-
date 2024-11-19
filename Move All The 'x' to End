@@ -1,0 +1,27 @@
+#MOVE ALL THE 'x' TO END OF THE STRING 
+#JAVA
+
+class Recursion {
+    public static void moveAllX(String str,int idx,int count,String newstring){
+        if(idx==str.length()){
+            for(int i=0;i<count;i++){
+                newstring+='x';
+            }
+            System.out.println(newstring);
+            return ;
+        }
+        char currchar=str.charAt(idx);
+        if (currchar=='x'){
+            count++;
+            moveAllX(str,idx+1,count,newstring);
+        }else{
+            newstring+=currchar;
+            moveAllX(str,idx+1,count,newstring);
+        }
+    }
+    public static void main(String[] args) {
+        String str="axbcxxd";//OUTPUT abcdxxx
+        moveAllX(str,0,0," ");//initialization&function call
+    }
+}
+
