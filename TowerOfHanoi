@@ -1,0 +1,28 @@
+#TOWER OF HANOI
+#JAVA
+
+class Recursion  {
+    public static void towerofhanoi(int n,String src,String helper ,String dest){
+        if(n==1){
+        System.out.println(" transfer disk "+n+" from "+src+" to "+dest);
+           return;
+        }
+        towerofhanoi(n-1,src,dest,helper);
+        System.out.println("transfer disk "+n+"from "+src+"to "+dest);
+        towerofhanoi(n-1,helper,src,dest); 
+    }
+    public static void main(String[] args) {
+        int n=3;// for 3, 7steps are needed.For 2 , 3 steps are required
+                // depends on value of n 
+        towerofhanoi(n,"S","H","D"); 
+    }
+}
+
+output:transfer disk 1 from S to D
+       transfer disk 2from Sto H
+       transfer disk 1 from D to H
+       transfer disk 3from Sto D
+       transfer disk 1 from H to S
+       transfer disk 2from Hto D
+       transfer disk 1 from S to D
+
