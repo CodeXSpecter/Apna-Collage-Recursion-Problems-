@@ -1,7 +1,7 @@
 #FIND THE FIRST AND LAST OCCURENCE OF ELEMENT
 #JAVA
 
-class Main {
+class Recursion {
     public static int first=-1;
     public static int last=-1;
 
