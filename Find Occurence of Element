@@ -1,0 +1,29 @@
+#FIND THE FIRST AND LAST OCCURENCE OF ELEMENT
+#JAVA
+
+class Main {
+    public static int first=-1;
+    public static int last=-1;
+
+    public static void findOccurence(String str,int idx,char element){
+        if(idx==str.length()){
+            System.out.println("First occurence is "+first);
+            System.out.println("Last occurence is "+last);
+            return;
+        }
+        char currentchar=str.charAt(idx);
+        if(currentchar==element){
+            if(first==-1){
+                first=idx;//for first iteration it gives value to the first after that it goes towards last value 
+            }  
+            else{
+                last=idx;
+            }
+        }
+        findOccurence(str,idx+1,element);
+    }
+    public static void main(String[] args) {
+        String str="abaacbaefaah";
+        findOccurence(str,0,'a');  //output 0,10
+    }
+}
