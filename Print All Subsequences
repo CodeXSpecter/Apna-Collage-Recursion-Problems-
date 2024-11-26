@@ -1,5 +1,5 @@
 #code for the print all the subsequences
-#java
+#JAVA
 
 class Recursion {
     public static void subsequence(String str ,int idx,String newstring ){
