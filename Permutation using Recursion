@@ -1,4 +1,6 @@
-public class REcursion {
+#In the following progaram we have given the string of alphabets we have to find the possible permutation of String 
+
+public class Recursion  {
     public static void printPerm (String str,String permutation ){
         if (str.length()==0){
             System.out.println(permutation);
@@ -15,3 +17,11 @@ public class REcursion {
     printPerm(str,"");
     }
 }
+
+output:
+abc
+acb
+bac
+bca
+cab
+cba
