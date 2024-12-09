@@ -1,0 +1,26 @@
+#In the given program we have given a maze ,we have to calculate the possible paths that can only moving down wards and right wards
+
+public class Recursion  {
+   public static int countPaths(int i,int j,int n, int m){
+       if(i==n||j==m){
+           return 0;
+       }
+       if(i==n-1&&j==m-1){
+           return 1;
+       }
+       //dowm move
+       int downpath=countPaths(i+1,j,n,m);
+       
+       //right move
+       int rightpaths=countPaths(i,j+1,n,m);
+       
+       return downpath+rightpaths;
+   }
+    public static void main (String [] args){
+    int n=3;
+    int m=3;
+    int totalpaths=countPaths(0,0,n,m);
+    System.out.println(totalpaths);
+    
+    }
+}
