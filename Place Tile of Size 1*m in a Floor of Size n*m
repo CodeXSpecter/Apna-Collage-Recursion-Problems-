@@ -1,0 +1,26 @@
+#In this program we have given a floor of size n*m and we have tiles of size 1*m .
+By using recursion we have to find how many ways that we can place the tile on the floor in different pattern 
+
+public class Recursion  {
+    public static int placeTiles(int n ,int m ){
+        if (n==m){
+            return 2;
+
+        }
+        if(n<m){
+            return 1;
+        }
+        //vertically
+        int vertPlacements=placeTiles(n-m ,m);
+
+        // horizontal
+        int horiPlacements=placeTiles(n-1, m);
+
+        return vertPlacements + horiPlacements;
+
+    }
+    public static void main (String [] args){
+    int n=4,m=2;
+    System.out.println(placeTiles(n, m));
+    }
+}
