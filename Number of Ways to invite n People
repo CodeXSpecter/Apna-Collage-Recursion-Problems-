@@ -1,0 +1,20 @@
+#In this problem we have to invite guests in a single or in a pair format using recursion 
+
+public class Recursion {
+    public static int callGuesta(int n){
+        if (n<=1){
+            return 1;
+        }
+
+        //single selection 
+        int ways1=callGuesta(n-1);
+        //pair
+        int ways2=(n-1)*callGuesta(n-2);
+        return ways1+ways2;
+
+    }
+    public static void main (String[] args){
+        int n=4;
+        System.out.println(callGuesta(n));
+    }
+}
